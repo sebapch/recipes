@@ -1,5 +1,10 @@
+import Inputs from "./components/inputs/Inputs";
+
 export default function HomePage (){
     return (
-        <h1>Esta es la app en next</h1>
+        <>
+            <h1>Esta es la app en next</h1>
+            <Inputs/>
+        </>
     )
 }
