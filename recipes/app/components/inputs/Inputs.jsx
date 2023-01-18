@@ -7,7 +7,6 @@ const Inputs = () => {
   const [ingredientes, setIngredientes] = useState([])
   const [result, setResult] = useState();
 
-  const code = process.env.NEXT_PUBLIC_TEST
 
     async function onSubmit(event) {
         event.preventDefault();
@@ -23,8 +22,8 @@ const Inputs = () => {
         });
         const data = await response.json();
         console.log(data)
-        console.log(code)
-       /*  setResult(data.choices[0].text); */
+        
+       setResult(data.choices[0].text);
       }
 
 
