@@ -15,13 +15,13 @@ const Inputs = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
           },
           body: `{"model": "text-davinci-003", "prompt": "haz una lista de 10 comidas con ${ingredientes}", "temperature": 0, "max_tokens": 300}`,
         });
         const data = await response.json();
-        console.log(data.choices[0].text)
-        setResult(data.choices[0].text);
+        console.log(data)
+       /*  setResult(data.choices[0].text); */
       }
 
 
