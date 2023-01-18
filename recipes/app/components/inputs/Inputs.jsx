@@ -21,7 +21,7 @@ const Inputs = () => {
           body: `{"model": "text-davinci-003", "prompt": "haz una lista de 10 comidas con ${ingredientes}", "temperature": 0, "max_tokens": 300}`,
         });
         const data = await response.json();
-        console.log(data)
+        console.log(data.choices[0].text)
         
        setResult(data.choices[0].text);
       }
