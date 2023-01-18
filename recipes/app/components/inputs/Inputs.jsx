@@ -15,7 +15,7 @@ const Inputs = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
           },
           body: `{"model": "text-davinci-003", "prompt": "haz una lista de 10 comidas con ${ingredientes}", "temperature": 0, "max_tokens": 300}`,
         });
