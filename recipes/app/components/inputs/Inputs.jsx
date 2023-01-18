@@ -7,6 +7,8 @@ const Inputs = () => {
   const [ingredientes, setIngredientes] = useState([])
   const [result, setResult] = useState();
 
+  const code = process.env.NEXT_PUBLIC_TEST
+
     async function onSubmit(event) {
         event.preventDefault();
         console.log('hola')
@@ -15,14 +17,16 @@ const Inputs = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
+            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`
           },
           body: `{"model": "text-davinci-003", "prompt": "haz una lista de 10 comidas con ${ingredientes}", "temperature": 0, "max_tokens": 300}`,
         });
         const data = await response.json();
         console.log(data)
+        console.log(code)
        /*  setResult(data.choices[0].text); */
       }
+
 
 
 
@@ -45,10 +49,12 @@ const Inputs = () => {
           <input type="submit" value="generar platos" />
         </form>
         <br/>
+        
           <br/>
         <div >{result}</div>
-
-    </>
+        
+        
+            </>
   )
 }
 
