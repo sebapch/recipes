@@ -4,20 +4,24 @@ import React, {useState} from 'react'
 
 const Inputs = () => {
   
-    const [datos, setDatos] = useState('')
+  const [ingredientes, setIngredientes] = useState([])
+  const [result, setResult] = useState();
 
     async function onSubmit(event) {
         event.preventDefault();
-        const response = await fetch("/api/generate", {
+        console.log('hola')
+        console.log(ingredientes)
+        const response = await fetch("https://api.openai.com/v1/completions", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Authorization": "Bearer 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"
           },
-          body: JSON.stringify({ datos: datosInput }),
+          body: `{"model": "text-davinci-003", "prompt": "haz una lista de 10 comidas con ${ingredientes}", "temperature": 0, "max_tokens": 300}`,
         });
         const data = await response.json();
-        setResult(data.result);
-        setDatosInput("");
+        console.log(data.choices[0].text)
+        setResult(data.choices[0].text);
       }
 
 
@@ -26,33 +30,24 @@ const Inputs = () => {
     <>
         
         <h3>Que cocino hoy?</h3>
+        <br/>
+          <br/>
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            name="ingredient"
-            placeholder="Enter ingredients"
-            value={datos}
-            onChange={(e) => setIngredients(e.target.value)}
+            name="ingrediente"
+            placeholder="Ingresa ingredientes separados por coma ' , ' "
+            value={ingredientes}
+            onChange={(e) => setIngredientes(e.target.value)}
           />
           <br/>
-          <input
-            type="text"
-            name="ingredient"
-            placeholder="Enter Country"
-            value={datos}
-            onChange={(e) => setCountry(e.target.value)}
-          />
           <br/>
-          <input
-            type="text"
-            name="ingredient"
-            placeholder="Enter Extras"
-            value={datos}
-            onChange={(e) => setExtra(e.target.value)}
-          />
-          <br/>
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="generar platos" />
         </form>
+        <br/>
+          <br/>
+        <div >{result}</div>
+
     </>
   )
 }
