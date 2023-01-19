@@ -45,7 +45,7 @@ const Inputs = () => {
   return (
     <>
       <div className={styles.main}>
-        <h3>Que cocino hoy?</h3>
+        <h3>Qué comemos hoy?</h3>
         <br />
         <br />
         <form onSubmit={onSubmit}>
@@ -76,7 +76,7 @@ const Inputs = () => {
           </select>
           <br />
           <br />
-          <input type="submit" value="generar platos" />
+          <input type="submit" value="Generar plato" />
         </form>
         <div className={styles.responseContainer}>
           <pre className={styles.preResult}>{result}</pre>
