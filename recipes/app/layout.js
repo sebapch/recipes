@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <head>
-        <title>My app with next 13</title>
+        <title>Que comemos hoy?</title>
       </head>
       <body>
          {/*  <Navigation /> */}
