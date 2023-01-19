@@ -56,7 +56,7 @@ const Inputs = () => {
           <input
             type="text"
             name="ingrediente"
-            placeholder="Ingresa ingredientes separados por coma ' , ' "
+            placeholder="Ingresa ingredientes"
             value={ingredientes}
             onChange={(e) => setIngredientes(e.target.value)}
           />
