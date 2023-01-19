@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Navigation } from "./components/Navigation";
 import "../styles/globals.css";
+import Footer from "./components/footer/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -8,9 +9,10 @@ export default function RootLayout({ children }) {
       <head>
         <title>Que comemos hoy?</title>
       </head>
-      <body>
+      <body class='bg-black'>
          {/*  <Navigation /> */}
         {children}
+        <Footer/>
       </body>
     </html>
   );

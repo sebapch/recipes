@@ -48,12 +48,13 @@ const Inputs = () => {
   return (
     <>
       <div className={styles.main}>
-        <h3>Qué comemos hoy?</h3>
+      <h1 className="m-2 text-4xl font-bold text-[#10A37F]">Que comemos hoy?</h1>
         <br />
         <br />
         <form onSubmit={onSubmit}>
           <p>Ingrese ingredientes:</p>
           <input
+            class='bg-[#3B3B3B]'
             type="text"
             name="ingrediente"
             placeholder="Ingresa ingredientes"
