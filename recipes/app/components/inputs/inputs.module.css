@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 2rem;
   }
   .main .icon {
     width: 34px;
@@ -34,7 +34,7 @@
     line-height: 40px;
     font-weight: bold;
     color: #c0c0c0;
-    margin: 16px 0 40px;
+  
   }
   .main form {
     display: flex;
@@ -77,6 +77,15 @@
     cursor: pointer;
   }
 
+  .main .loadingstyle {
+    padding: 0.25rem;
+    color: #fff;
+    background-color: #10a37f;
+    border: 1px solid #10a37f;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
 
   .main .result {
     font-weight: bold;
@@ -86,7 +95,6 @@
   }
 
   .responseContainer{
-  
     font-size: 13px !important;
     max-width: 80% !important;
     
@@ -100,3 +108,25 @@
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 
   }
+
+  
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #064938;
+    border-bottom-color: #07dca7;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: auto;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 

@@ -13,8 +13,10 @@ const Inputs = () => {
   const [ingredientes, setIngredientes] = useState([]);
   const [region, setRegion] = useState([]);
   const [result, setResult] = useState();
+  const [loading, setLoading] = useState(false)
 
   async function onSubmit(event) {
+    setLoading(true)
     event.preventDefault();
 
     console.log(ingredientes);
@@ -30,6 +32,7 @@ const Inputs = () => {
     console.log(data.choices[0].text);
 
     setResult(data.choices[0].text);
+    setLoading(false)
   }
 
   const handleRegion = (e) => {
@@ -76,7 +79,8 @@ const Inputs = () => {
           </select>
           <br />
           <br />
-          <input type="submit" value="Generar plato" />
+          {loading ? <span className={styles.loader}></span> : <input type="submit" value="Generar plato" />}
+        
         </form>
         <div className={styles.responseContainer}>
           <pre className={styles.preResult}>{result}</pre>
