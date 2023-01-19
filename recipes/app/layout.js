@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
         <title>My app with next 13</title>
       </head>
       <body>
-          <Navigation />
+         {/*  <Navigation /> */}
         {children}
       </body>
     </html>
