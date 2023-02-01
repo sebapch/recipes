@@ -81,7 +81,7 @@ const Inputs = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
       },
-      body: `{"model": "text-davinci-003", "prompt": "${prompt}", "temperature": 0, "max_tokens": 400}`,
+      body: `{"model": "text-davinci-003", "prompt": "${prompt}", "temperature": 0, "max_tokens": 500}`,
     });
 
     const data = await response.json();
