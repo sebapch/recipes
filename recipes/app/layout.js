@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Que comemos hoy?</title>
       </head>
-      <body class='bg-black'>
+      <body className='bg-black'>
          {/*  <Navigation /> */}
         {children}
         <Footer/>
